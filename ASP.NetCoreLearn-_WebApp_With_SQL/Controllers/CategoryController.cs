@@ -40,6 +40,7 @@ namespace ASP.NetCoreLearn__WebApp_With_SQL.Controllers
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category created Successfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -80,6 +81,7 @@ namespace ASP.NetCoreLearn__WebApp_With_SQL.Controllers
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
+                TempData["success"] = "Category edit Successfully";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -120,7 +122,8 @@ namespace ASP.NetCoreLearn__WebApp_With_SQL.Controllers
             }
                 _db.Categories.Remove(obj);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+            TempData["success"] = "Category deleted Successfully";
+            return RedirectToAction("Index");
           
          
         }
