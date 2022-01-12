@@ -18,5 +18,11 @@ namespace ASP.NetCoreLearn__WebApp_With_SQL.Controllers
             IEnumerable<Category> objCategoryList = _db.Categories.ToList();
             return View(objCategoryList);
         }
+        //GET
+        public IActionResult Create()
+        {
+          
+            return View();
+        }
     }
 }
